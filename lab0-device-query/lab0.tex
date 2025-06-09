@@ -24,7 +24,7 @@ The purpose of this lab is to check your environment settings and to make sure y
 	\item If you see a cuda toolkit later than 10 you are good to go.  If you don't then type \verb1module avail1, and find the most recent cuda toolkit (highest revision number) and copy the full string (module name).
 	\item Edit your bash profile (\verb1nano .bash_profile1) and add the following at the end of the file: \verb1module load <module name you copied>1.
 	\end{enumerate}
-\item Type \verb1mkdir code1 then \verb1cd code1.  You will now clone the lab from github by typing \\ \verb1https://github.com/Baylor-Massively-Parallel-Programming/mpplabs.git1
+\item Type \verb1mkdir code1 then \verb1cd code1.  You will now clone the lab from github by typing \\ \verb1git clone https://github.com/Baylor-Massively-Parallel-Programming/mpplabs.git1
 \item Now type \verb1cd mpplabs1 and \verb1ls1.  We want to use the code in lab 0, so \verb1cd lab0*1 (note star is a regular expression that stands for anything).
 \item We will now make the executable by typing \verb1make1.
 \item First trying running the executable on the login node (generally don't do this): \verb1./device-query1.  It will tell you there is no cuda device, since the login node of kodiak doesn't have any gpus.
