@@ -1,0 +1,43 @@
+\documentclass{article}
+
+\title{Lab 1}
+\author{Keith Evan Schubert}
+
+\begin{document}
+\maketitle
+
+\section{Objective}
+The purpose of this lab is to get you familiar with using the CUDA API by implementing a simple vector addition kernel and its associated setup code.  Note: This is a simple but essential exercise. Please write out the code and do not copy it from other examples or lecture slides. That process is most important.
+
+\section{Activity}
+
+\begin{enumerate}
+\item Login to kodiak.  cd to your mpplabs directory and type \verb1git pull1.
+\item Edit the file \verb1<lab-directory>/main.cu1 to implement the following where indicated:
+	\begin{enumerate}
+	\item Allocate device memory
+	\item Copy host memory to device
+	\item Initialize thread block and kernel grid dimensions and invoke CUDA kernel
+	\item Copy results from device to host
+	\item Free device memory
+	\end{enumerate}	
+\item Edit the file <lab-directory>/kernel.cu to implement the vector addition kernel code.
+\item Compile and test your code.  Try it for several sizes, say 1k, 10k, 100k, 1M.  How does the time change?  Does each part change the same?
+\begin{verbatim}
+	    cd <lab-directory>
+	    make
+	    nano vecadd.sh                 #add the following
+	   		 ~/,lab-directory>/vecadd      # Uses the default vector size
+	   		 ~/,lab-directory>/vecadd <m>  # Uses vectors of size m
+	    mpprun vecadd.sh
+\end{verbatim}
+\end{enumerate}
+
+\section{Turn in}
+Upload a report that includes the output with analysis of the time complexity scaling, main.cu, and kernel.cu  to the course Canvas site.
+
+
+\section{Going Further}
+Try this same thing for changing an image to grayscale.
+
+\end{document} 
