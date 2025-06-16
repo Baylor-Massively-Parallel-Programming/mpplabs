@@ -1,0 +1,41 @@
+\documentclass{article}
+
+\title{Lab 0}
+\author{Keith Evan Schubert}
+
+\begin{document}
+\maketitle
+
+\section{Objective}
+The purpose of this lab is to check your environment settings and to make sure you can compile and run CUDA programs on the environment you’ll be using throughout the course.  In this lab, you will:
+\begin{itemize}
+\item Get a copy of the assignment package and walk through the directory structure
+\item Set up the environment for executing the assignments
+\item Test the environment with a simple program that just queries what GPU device is attached
+\end{itemize}
+
+\section{Activity}
+
+\begin{enumerate}
+\item Login to kodiak3.  On a Mac or Linux system open a terminal and type \verb1ssh kodiak3.baylor.edu1, then enter your login information.  On a Windows system, launch a secure shell app (in the Network Apps folder in the start menu) then use connect (sometimes called quick connect).
+\item Now that you are in.  We need to fix our default environment to allow us to support the latest version of cuda.
+	\begin{enumerate}
+	\item type \verb1module list1.
+	\item If you see a cuda toolkit later than 10 you are good to go.  If you don't then type \verb1module avail1, and find the most recent cuda toolkit (highest revision number) and copy the full string (module name).
+	\item Edit your bash profile (\verb1nano .bash_profile1) and add the following at the end of the file: \verb1module load <module name you copied>1.
+	\end{enumerate}
+\item Type \verb1mkdir code1 then \verb1cd code1.  You will now clone the lab from github by typing \\ \hspace*{-.4in}\verb1git clone https://github.com/Baylor-Massively-Parallel-Programming/mpplabs.git1
+\item Now type \verb1cd mpplabs1 and \verb1ls1.  We want to use the code in lab 0, so \verb1cd lab0*1 (note star is a regular expression that stands for anything).
+\item We will now make the executable by typing \verb1make1.
+\item First trying running the executable on the login node (generally don't do this): \verb1./device-query1.  It will tell you there is no cuda device, since the login node of kodiak doesn't have any gpus.
+\item We will now submit to one of the gpu queues using the \verb1mpprun1 script I described in the course videos.
+\end{enumerate}
+
+\section{Turn in}
+Copy the output from kodiak and put them in a pdf.  This is very easy to do in {\LaTeX}, for instance you could cut and paste the text from the file.  Upload this to the course Canvas site.  Note in this case you haven't modified any code so you don't need to upload anything.  This is a Pass/Fail lab, that shows you could get the code from GitHub, run it on Kodiak, and produce a simple report in \LaTeX.
+
+
+\section{Further Reading}
+In the class video on logging into Kodiak has a number of Kodiak References.  They are very easy to read and will get you up to speed on using Kodiak.
+
+\end{document} 

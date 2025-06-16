@@ -1,2 +1,2 @@
 # mpplabs
-Massively Parallel Programming Student Labs
+Lab starter code and lab manuals
